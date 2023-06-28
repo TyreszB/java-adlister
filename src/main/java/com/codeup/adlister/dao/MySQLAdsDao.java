@@ -82,4 +82,19 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public void delete(long adId) {
+
+    }
+
+    @Override
+    public void update(Ad ad) {
+
+    }
+
+    @Override
+    public Ad findById(long adId) {
+        return null;
+    }
+
 }
