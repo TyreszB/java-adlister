@@ -26,9 +26,9 @@ public class UpdateAdServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // Retrieve the updated ad details from the form
-        long adId = Long.parseLong(request.getParameter("id"));
-        String newTitle = request.getParameter("title");
-        String newDescription = request.getParameter("description");
+        long adId = Long.parseLong(request.getParameter("adId"));
+        String newTitle = request.getParameter("updateTitle");
+        String newDescription = request.getParameter("updateDescription");
 
         // Fetch the ad object from the database using the ad ID
         Ad ad = DaoFactory.getAdsDao().findById(adId);

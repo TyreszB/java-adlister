@@ -12,12 +12,13 @@ import java.io.IOException;
 @WebServlet(name = "controllers.DeleteAdServlet", urlPatterns = "/ad/delete")
 public class DeleteAdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Retrieve the ad ID from the request parameters
+        long adId = Long.parseLong(request.getParameter("adId"));
 
-        long adId = Long.parseLong(request.getParameter("id"));
-
+        // Delete the ad from the database
         DaoFactory.getAdsDao().delete(adId);
 
+        // Redirect back to the profile page
         response.sendRedirect("/profile");
     }
 }
-
